@@ -9,18 +9,20 @@
 /* Begin PBXBuildFile section */
 		5C5F81342B91BCB000654123 /* Retro_GameApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5F81332B91BCB000654123 /* Retro_GameApp.swift */; };
 		5C5F81362B91BCB000654123 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5F81352B91BCB000654123 /* ContentView.swift */; };
-		5C5F81382B91BCB000654123 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5F81372B91BCB000654123 /* Item.swift */; };
 		5C5F813A2B91BCB200654123 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C5F81392B91BCB200654123 /* Assets.xcassets */; };
 		5C5F813D2B91BCB200654123 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C5F813C2B91BCB200654123 /* Preview Assets.xcassets */; };
+		5C61FD152B94B0CF00706884 /* ReverseGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C61FD142B94B0CF00706884 /* ReverseGame.swift */; };
+		5C61FD172B958B8A00706884 /* FindOthelloPiece.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C61FD162B958B8A00706884 /* FindOthelloPiece.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		5C5F81302B91BCB000654123 /* Retro Game.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Retro Game.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C5F81332B91BCB000654123 /* Retro_GameApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Retro_GameApp.swift; sourceTree = "<group>"; };
 		5C5F81352B91BCB000654123 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		5C5F81372B91BCB000654123 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		5C5F81392B91BCB200654123 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5C5F813C2B91BCB200654123 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		5C61FD142B94B0CF00706884 /* ReverseGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReverseGame.swift; sourceTree = "<group>"; };
+		5C61FD162B958B8A00706884 /* FindOthelloPiece.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindOthelloPiece.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,7 +57,8 @@
 			children = (
 				5C5F81332B91BCB000654123 /* Retro_GameApp.swift */,
 				5C5F81352B91BCB000654123 /* ContentView.swift */,
-				5C5F81372B91BCB000654123 /* Item.swift */,
+				5C61FD142B94B0CF00706884 /* ReverseGame.swift */,
+				5C61FD162B958B8A00706884 /* FindOthelloPiece.swift */,
 				5C5F81392B91BCB200654123 /* Assets.xcassets */,
 				5C5F813B2B91BCB200654123 /* Preview Content */,
 			);
@@ -141,8 +144,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				5C5F81362B91BCB000654123 /* ContentView.swift in Sources */,
-				5C5F81382B91BCB000654123 /* Item.swift in Sources */,
+				5C61FD172B958B8A00706884 /* FindOthelloPiece.swift in Sources */,
 				5C5F81342B91BCB000654123 /* Retro_GameApp.swift in Sources */,
+				5C61FD152B94B0CF00706884 /* ReverseGame.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
