@@ -20,6 +20,7 @@ struct XY: Hashable {
 
 struct ReverseGame: View {
     let deviceWidth = UIScreen.main.bounds.width
+    let deviceHeight = UIScreen.main.bounds.height
     @State var OthelloBoard =
         [[-1, -1, -1, -1, -1, -1, -1, -1],
          [-1, -1, -1, -1, -1, -1, -1, -1],
@@ -32,8 +33,11 @@ struct ReverseGame: View {
     //オセロの順番
     @State var OthelloOrder = 0
     @State var OthelloPlace = [XY: [XY]]()
+    @State var GameFinish = false;
+    
     var body: some View {
         ZStack {
+            
             VStack(spacing: 0) {
                 ForEach(0..<8) { i in
                     HStack(spacing: 0) {
@@ -48,6 +52,13 @@ struct ReverseGame: View {
                                     }
                                     OthelloPlace = FindOthelloPiece(OthelloBoard: OthelloBoard, OthelloOrder: OthelloOrder)
                                     OthelloOrder = (OthelloOrder + 1) % 2;
+                                    if(OthelloPlace.count == 0) {
+                                        OthelloPlace = FindOthelloPiece(OthelloBoard: OthelloBoard, OthelloOrder: OthelloOrder)
+                                        OthelloOrder = (OthelloOrder + 1) % 2;
+                                        if(OthelloPlace.count == 0) {
+                                            GameFinish = true
+                                        }
+                                    }
                                 }
                                 
                             }label: {
@@ -70,7 +81,21 @@ struct ReverseGame: View {
                         }
                     }
                 }
+                
+                
             }
+            if(GameFinish) {
+               Text("Gameset")
+            }
+            else if(OthelloOrder == 0) {
+                Text("白のターンです")
+                    .position(x:80,y:((deviceHeight / 2) + ((deviceWidth - 20) / 2)) + 10)
+            }else {
+                Text("黒のターンです")
+                    .position(x:80,y:((deviceHeight / 2) + ((deviceWidth - 20) / 2)) + 10)
+                    
+            }
+            
         }
         .onAppear {
             OthelloPlace = FindOthelloPiece(OthelloBoard: OthelloBoard, OthelloOrder: OthelloOrder)
