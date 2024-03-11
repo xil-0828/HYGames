@@ -6,13 +6,30 @@
 //
 
 import SwiftUI
-
+import FirebaseFirestore
 struct OnlineReversiRoom: View {
+    @ObservedObject private var viewModel = ViewModel()
+    @AppStorage("UserName") var UserName = ""
+    @Binding var isRoomView: Bool
+    @State var db = Firestore.firestore()
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ZStack {
+            VStack {
+                Text("オンライン対戦")
+                    .font(.largeTitle)
+                
+                Button {
+                    db.collection("EmptyRoom").document(UserName).setData(["isEnterRoom": false])
+                    
+                }label: {
+                    Text("部屋を作る")
+                }
+                Text("部屋に入る")
+                HStack {
+                    
+                }
+            }
+        }
     }
 }
 
-#Preview {
-    OnlineReversiRoom()
-}

@@ -18,9 +18,11 @@ struct XY: Hashable {
 }
 
 
+
 struct ReverseGame: View {
     let deviceWidth = UIScreen.main.bounds.width
     let deviceHeight = UIScreen.main.bounds.height
+    // 0:黒 1:白
     @State var OthelloBoard =
         [[-1, -1, -1, -1, -1, -1, -1, -1],
          [-1, -1, -1, -1, -1, -1, -1, -1],
@@ -34,7 +36,9 @@ struct ReverseGame: View {
     @State var OthelloOrder = 0
     @State var OthelloPlace = [XY: [XY]]()
     @State var GameFinish = false;
-    
+    @State var Winner = 0;
+    @Environment(\.presentationMode) var presentation
+    @State private var gameResetToken = UUID()
     var body: some View {
         ZStack {
             
@@ -56,6 +60,7 @@ struct ReverseGame: View {
                                         OthelloPlace = FindOthelloPiece(OthelloBoard: OthelloBoard, OthelloOrder: OthelloOrder)
                                         OthelloOrder = (OthelloOrder + 1) % 2;
                                         if(OthelloPlace.count == 0) {
+                                            Winner = WhereWinner(OthelloBoard: OthelloBoard)
                                             GameFinish = true
                                         }
                                     }
@@ -84,10 +89,21 @@ struct ReverseGame: View {
                 
                 
             }
-            if(GameFinish) {
-               Text("Gameset")
+            .alert("GameSet", isPresented: $GameFinish) {
+                        // ダイアログ内で行うアクション処理...
+                Button("スタートに戻る") {
+                    self.presentation.wrappedValue.dismiss()
+                }
+            } message: {
+                        // アラートのメッセージ...
+                if(Winner == 0) {
+                    Text("黒の勝ちです")
+                }else {
+                    Text("白の勝ちです")
+                }
+                        
             }
-            else if(OthelloOrder == 0) {
+            if(OthelloOrder == 0) {
                 Text("白のターンです")
                     .position(x:80,y:((deviceHeight / 2) + ((deviceWidth - 20) / 2)) + 10)
             }else {

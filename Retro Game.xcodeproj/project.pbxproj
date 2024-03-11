@@ -13,6 +13,23 @@
 		5C5F813D2B91BCB200654123 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C5F813C2B91BCB200654123 /* Preview Assets.xcassets */; };
 		5C61FD152B94B0CF00706884 /* ReverseGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C61FD142B94B0CF00706884 /* ReverseGame.swift */; };
 		5C61FD172B958B8A00706884 /* FindOthelloPiece.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C61FD162B958B8A00706884 /* FindOthelloPiece.swift */; };
+		5C61FD1E2B9613C200706884 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 5C61FD1D2B9613C200706884 /* FirebaseAnalytics */; };
+		5C61FD202B9613C200706884 /* FirebaseAnalyticsOnDeviceConversion in Frameworks */ = {isa = PBXBuildFile; productRef = 5C61FD1F2B9613C200706884 /* FirebaseAnalyticsOnDeviceConversion */; };
+		5C61FD222B9613C200706884 /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 5C61FD212B9613C200706884 /* FirebaseAnalyticsSwift */; };
+		5C61FD242B9613C200706884 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */ = {isa = PBXBuildFile; productRef = 5C61FD232B9613C200706884 /* FirebaseAnalyticsWithoutAdIdSupport */; };
+		5C61FD262B9613C200706884 /* FirebaseAppCheck in Frameworks */ = {isa = PBXBuildFile; productRef = 5C61FD252B9613C200706884 /* FirebaseAppCheck */; };
+		5C61FD272B997DEE00706884 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5C61FD1B2B96129400706884 /* GoogleService-Info.plist */; };
+		5C61FD292B99881900706884 /* WhereWinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C61FD282B99881900706884 /* WhereWinner.swift */; };
+		5C61FD2B2B9B662A00706884 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 5C61FD2A2B9B662A00706884 /* FirebaseAnalytics */; };
+		5C61FD2D2B9B662A00706884 /* FirebaseAnalyticsOnDeviceConversion in Frameworks */ = {isa = PBXBuildFile; productRef = 5C61FD2C2B9B662A00706884 /* FirebaseAnalyticsOnDeviceConversion */; };
+		5C61FD2F2B9B662A00706884 /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 5C61FD2E2B9B662A00706884 /* FirebaseAnalyticsSwift */; };
+		5C61FD312B9B662A00706884 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */ = {isa = PBXBuildFile; productRef = 5C61FD302B9B662A00706884 /* FirebaseAnalyticsWithoutAdIdSupport */; };
+		5C61FD332B9B662A00706884 /* FirebaseAppCheck in Frameworks */ = {isa = PBXBuildFile; productRef = 5C61FD322B9B662A00706884 /* FirebaseAppCheck */; };
+		5C61FD362B9B66B300706884 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 5C61FD352B9B66B300706884 /* FirebaseFirestoreSwift */; };
+		5C61FD382B9B671300706884 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 5C61FD372B9B671300706884 /* FirebaseFirestore */; };
+		5C61FD3A2B9E29BB00706884 /* ReversiDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C61FD392B9E29BB00706884 /* ReversiDataClass.swift */; };
+		5C61FD3C2B9F310700706884 /* NameChange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C61FD3B2B9F310700706884 /* NameChange.swift */; };
+		5C61FD3E2B9F44E500706884 /* OnlineReversiRoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C61FD3D2B9F44E500706884 /* OnlineReversiRoom.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +40,11 @@
 		5C5F813C2B91BCB200654123 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		5C61FD142B94B0CF00706884 /* ReverseGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReverseGame.swift; sourceTree = "<group>"; };
 		5C61FD162B958B8A00706884 /* FindOthelloPiece.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindOthelloPiece.swift; sourceTree = "<group>"; };
+		5C61FD1B2B96129400706884 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		5C61FD282B99881900706884 /* WhereWinner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhereWinner.swift; sourceTree = "<group>"; };
+		5C61FD392B9E29BB00706884 /* ReversiDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReversiDataClass.swift; sourceTree = "<group>"; };
+		5C61FD3B2B9F310700706884 /* NameChange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameChange.swift; sourceTree = "<group>"; };
+		5C61FD3D2B9F44E500706884 /* OnlineReversiRoom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnlineReversiRoom.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -30,6 +52,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5C61FD222B9613C200706884 /* FirebaseAnalyticsSwift in Frameworks */,
+				5C61FD1E2B9613C200706884 /* FirebaseAnalytics in Frameworks */,
+				5C61FD2B2B9B662A00706884 /* FirebaseAnalytics in Frameworks */,
+				5C61FD2D2B9B662A00706884 /* FirebaseAnalyticsOnDeviceConversion in Frameworks */,
+				5C61FD2F2B9B662A00706884 /* FirebaseAnalyticsSwift in Frameworks */,
+				5C61FD382B9B671300706884 /* FirebaseFirestore in Frameworks */,
+				5C61FD362B9B66B300706884 /* FirebaseFirestoreSwift in Frameworks */,
+				5C61FD202B9613C200706884 /* FirebaseAnalyticsOnDeviceConversion in Frameworks */,
+				5C61FD262B9613C200706884 /* FirebaseAppCheck in Frameworks */,
+				5C61FD312B9B662A00706884 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */,
+				5C61FD332B9B662A00706884 /* FirebaseAppCheck in Frameworks */,
+				5C61FD242B9613C200706884 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -41,6 +75,7 @@
 			children = (
 				5C5F81322B91BCB000654123 /* Retro Game */,
 				5C5F81312B91BCB000654123 /* Products */,
+				5C61FD342B9B66B300706884 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,9 +91,10 @@
 			isa = PBXGroup;
 			children = (
 				5C5F81332B91BCB000654123 /* Retro_GameApp.swift */,
+				5C61FD1B2B96129400706884 /* GoogleService-Info.plist */,
 				5C5F81352B91BCB000654123 /* ContentView.swift */,
-				5C61FD142B94B0CF00706884 /* ReverseGame.swift */,
-				5C61FD162B958B8A00706884 /* FindOthelloPiece.swift */,
+				5C61FD3B2B9F310700706884 /* NameChange.swift */,
+				5C61FD182B95FF6400706884 /* Reverse */,
 				5C5F81392B91BCB200654123 /* Assets.xcassets */,
 				5C5F813B2B91BCB200654123 /* Preview Content */,
 			);
@@ -71,6 +107,25 @@
 				5C5F813C2B91BCB200654123 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		5C61FD182B95FF6400706884 /* Reverse */ = {
+			isa = PBXGroup;
+			children = (
+				5C61FD3D2B9F44E500706884 /* OnlineReversiRoom.swift */,
+				5C61FD162B958B8A00706884 /* FindOthelloPiece.swift */,
+				5C61FD392B9E29BB00706884 /* ReversiDataClass.swift */,
+				5C61FD142B94B0CF00706884 /* ReverseGame.swift */,
+				5C61FD282B99881900706884 /* WhereWinner.swift */,
+			);
+			path = Reverse;
+			sourceTree = "<group>";
+		};
+		5C61FD342B9B66B300706884 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -89,6 +144,20 @@
 			dependencies = (
 			);
 			name = "Retro Game";
+			packageProductDependencies = (
+				5C61FD1D2B9613C200706884 /* FirebaseAnalytics */,
+				5C61FD1F2B9613C200706884 /* FirebaseAnalyticsOnDeviceConversion */,
+				5C61FD212B9613C200706884 /* FirebaseAnalyticsSwift */,
+				5C61FD232B9613C200706884 /* FirebaseAnalyticsWithoutAdIdSupport */,
+				5C61FD252B9613C200706884 /* FirebaseAppCheck */,
+				5C61FD2A2B9B662A00706884 /* FirebaseAnalytics */,
+				5C61FD2C2B9B662A00706884 /* FirebaseAnalyticsOnDeviceConversion */,
+				5C61FD2E2B9B662A00706884 /* FirebaseAnalyticsSwift */,
+				5C61FD302B9B662A00706884 /* FirebaseAnalyticsWithoutAdIdSupport */,
+				5C61FD322B9B662A00706884 /* FirebaseAppCheck */,
+				5C61FD352B9B66B300706884 /* FirebaseFirestoreSwift */,
+				5C61FD372B9B671300706884 /* FirebaseFirestore */,
+			);
 			productName = "Retro Game";
 			productReference = 5C5F81302B91BCB000654123 /* Retro Game.app */;
 			productType = "com.apple.product-type.application";
@@ -117,6 +186,9 @@
 				Base,
 			);
 			mainGroup = 5C5F81272B91BCB000654123;
+			packageReferences = (
+				5C61FD1C2B9613C200706884 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = 5C5F81312B91BCB000654123 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -133,6 +205,7 @@
 			files = (
 				5C5F813D2B91BCB200654123 /* Preview Assets.xcassets in Resources */,
 				5C5F813A2B91BCB200654123 /* Assets.xcassets in Resources */,
+				5C61FD272B997DEE00706884 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -146,7 +219,11 @@
 				5C5F81362B91BCB000654123 /* ContentView.swift in Sources */,
 				5C61FD172B958B8A00706884 /* FindOthelloPiece.swift in Sources */,
 				5C5F81342B91BCB000654123 /* Retro_GameApp.swift in Sources */,
+				5C61FD3A2B9E29BB00706884 /* ReversiDataClass.swift in Sources */,
+				5C61FD3E2B9F44E500706884 /* OnlineReversiRoom.swift in Sources */,
 				5C61FD152B94B0CF00706884 /* ReverseGame.swift in Sources */,
+				5C61FD292B99881900706884 /* WhereWinner.swift in Sources */,
+				5C61FD3C2B9F310700706884 /* NameChange.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,11 +360,12 @@
 				DEVELOPMENT_TEAM = YTQW99BMDM;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.games";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -295,9 +373,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "myproject.Retro-Game";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -312,11 +393,12 @@
 				DEVELOPMENT_TEAM = YTQW99BMDM;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.games";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -324,9 +406,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "myproject.Retro-Game";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -352,6 +437,75 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		5C61FD1C2B9613C200706884 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.21.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		5C61FD1D2B9613C200706884 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5C61FD1C2B9613C200706884 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		5C61FD1F2B9613C200706884 /* FirebaseAnalyticsOnDeviceConversion */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5C61FD1C2B9613C200706884 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalyticsOnDeviceConversion;
+		};
+		5C61FD212B9613C200706884 /* FirebaseAnalyticsSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5C61FD1C2B9613C200706884 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalyticsSwift;
+		};
+		5C61FD232B9613C200706884 /* FirebaseAnalyticsWithoutAdIdSupport */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5C61FD1C2B9613C200706884 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalyticsWithoutAdIdSupport;
+		};
+		5C61FD252B9613C200706884 /* FirebaseAppCheck */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5C61FD1C2B9613C200706884 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAppCheck;
+		};
+		5C61FD2A2B9B662A00706884 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = FirebaseAnalytics;
+		};
+		5C61FD2C2B9B662A00706884 /* FirebaseAnalyticsOnDeviceConversion */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = FirebaseAnalyticsOnDeviceConversion;
+		};
+		5C61FD2E2B9B662A00706884 /* FirebaseAnalyticsSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = FirebaseAnalyticsSwift;
+		};
+		5C61FD302B9B662A00706884 /* FirebaseAnalyticsWithoutAdIdSupport */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = FirebaseAnalyticsWithoutAdIdSupport;
+		};
+		5C61FD322B9B662A00706884 /* FirebaseAppCheck */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = FirebaseAppCheck;
+		};
+		5C61FD352B9B66B300706884 /* FirebaseFirestoreSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5C61FD1C2B9613C200706884 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestoreSwift;
+		};
+		5C61FD372B9B671300706884 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5C61FD1C2B9613C200706884 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 5C5F81282B91BCB000654123 /* Project object */;
 }
