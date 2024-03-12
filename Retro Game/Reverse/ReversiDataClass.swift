@@ -13,18 +13,24 @@ struct ReversiData: Identifiable {
     var OthelloBoard:[Int]
     var isInRoom: Bool
 }
+struct emptyRoomData: Hashable {
+    var id: String = UUID().uuidString
+    var isEnterRoom: Bool
+    var UserName: String
+}
 class ViewModel: ObservableObject {
     
     @Published var reversiData = ReversiData(OthelloOrder: 0, OthelloBoard: [0], isInRoom: false)
-    
+    @Published var emptyroomdata = [emptyRoomData]()
     private var db = Firestore.firestore()
-    @Published var text = "";
+    
     @Published var CollectionsName = "init";
     @Published var addCount = 0;
     func fetchData() {
         
-        db.collection(CollectionsName).document("SF")
+        db.collection("EmptyRoom").document("Ffff")
           .addSnapshotListener { documentSnapshot, error in
+              print("333333333333")
             guard let document = documentSnapshot else {
               print("Error fetching document: \(error!)")
               return
@@ -33,8 +39,8 @@ class ViewModel: ObservableObject {
               print("Document data was empty.")
               return
             }
-              self.text = data["name"] as! String
-              print(self.text)
+              
+              
           }
 
     }
@@ -53,8 +59,8 @@ class ViewModel: ObservableObject {
                     
                     // すべてのドキュメントを取得してTodoを作成します
                     snapshot.documents.map { doc in
-                        print(doc.documentID)
                         
+                        self.emptyroomdata.append(emptyRoomData(isEnterRoom: (doc["isEnterRoom"] != nil), UserName: doc.documentID))
                     }
                 }
                 

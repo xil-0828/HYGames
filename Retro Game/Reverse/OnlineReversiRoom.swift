@@ -15,6 +15,7 @@ struct OnlineReversiRoom: View {
     var body: some View {
         ZStack {
             VStack {
+                Text("\(viewModel.text)これからの人生")
                 Text("オンライン対戦")
                     .font(.largeTitle)
                 
@@ -26,9 +27,20 @@ struct OnlineReversiRoom: View {
                 }
                 Text("部屋に入る")
                 HStack {
-                    
+                    ForEach(viewModel.emptyroomdata, id: \.self) { data in
+                        ZStack {
+                            Rectangle()
+                                .foregroundColor(.blue)
+                                .frame(width: 50,height: 50)
+                            Text(data.UserName)
+                            
+                        }
+                    }
                 }
             }
+        }
+        .onAppear {
+            viewModel.fetchData()
         }
     }
 }
