@@ -17,12 +17,12 @@ struct ContentView: View {
     @State var isNameChange = false;
     @State var isRoomView = false;
     @ObservedObject private var viewModel = ViewModel()
-    @AppStorage("UserName") var UserName = ""
+    @ObservedObject var UserName = NameChangeAppstorage()
     
     var body: some View {
         NavigationView {
             VStack {
-                Text(UserName)
+                Text(UserName.UserName)
                     .font(.largeTitle)
                 NavigationLink {
                     ReverseGame()
@@ -52,7 +52,7 @@ struct ContentView: View {
                 }
             }
         }.onAppear {
-            if(UserName == "") {
+            if(UserName.UserName == "") {
                 isNameChange = true;
             }
            

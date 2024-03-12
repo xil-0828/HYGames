@@ -6,8 +6,11 @@
 //
 
 import SwiftUI
-struct NameChange: View {
+class NameChangeAppstorage:ObservableObject {
     @AppStorage("UserName") var UserName = ""
+}
+struct NameChange: View {
+    @ObservedObject var UserName = NameChangeAppstorage()
     @State var isTextCountOver = false
     @Binding var isNameChange: Bool
   var body: some View {
@@ -15,15 +18,15 @@ struct NameChange: View {
           VStack {
               Text("ゲームをするときのニックネームを決めてください")
               Text("８文字以内でお願いします")
-              TextField("Enter text", text: $UserName)
-                  .onChange(of: UserName) { newValue in
+              TextField("Enter text", text: $UserName.UserName)
+                  .onChange(of: UserName.UserName) { newValue in
                       if newValue.count > 8 {
                           let index = newValue.index(newValue.startIndex, offsetBy: 8)
-                          UserName = String(newValue.prefix(upTo: index))
+                          UserName.UserName = String(newValue.prefix(upTo: index))
                       }
                   }
               Button {
-                  if UserName.count > 0 {
+                  if UserName.UserName.count > 0 {
                       isNameChange = false
                   }
               }label: {

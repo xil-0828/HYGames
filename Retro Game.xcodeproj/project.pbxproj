@@ -30,6 +30,7 @@
 		5C61FD3A2B9E29BB00706884 /* ReversiDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C61FD392B9E29BB00706884 /* ReversiDataClass.swift */; };
 		5C61FD3C2B9F310700706884 /* NameChange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C61FD3B2B9F310700706884 /* NameChange.swift */; };
 		5C61FD3E2B9F44E500706884 /* OnlineReversiRoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C61FD3D2B9F44E500706884 /* OnlineReversiRoom.swift */; };
+		5C61FD402BA0AC5500706884 /* OnlineReversiGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C61FD3F2BA0AC5500706884 /* OnlineReversiGame.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +46,7 @@
 		5C61FD392B9E29BB00706884 /* ReversiDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReversiDataClass.swift; sourceTree = "<group>"; };
 		5C61FD3B2B9F310700706884 /* NameChange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameChange.swift; sourceTree = "<group>"; };
 		5C61FD3D2B9F44E500706884 /* OnlineReversiRoom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnlineReversiRoom.swift; sourceTree = "<group>"; };
+		5C61FD3F2BA0AC5500706884 /* OnlineReversiGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnlineReversiGame.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +117,7 @@
 				5C61FD3D2B9F44E500706884 /* OnlineReversiRoom.swift */,
 				5C61FD162B958B8A00706884 /* FindOthelloPiece.swift */,
 				5C61FD392B9E29BB00706884 /* ReversiDataClass.swift */,
+				5C61FD3F2BA0AC5500706884 /* OnlineReversiGame.swift */,
 				5C61FD142B94B0CF00706884 /* ReverseGame.swift */,
 				5C61FD282B99881900706884 /* WhereWinner.swift */,
 			);
@@ -217,6 +220,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5C5F81362B91BCB000654123 /* ContentView.swift in Sources */,
+				5C61FD402BA0AC5500706884 /* OnlineReversiGame.swift in Sources */,
 				5C61FD172B958B8A00706884 /* FindOthelloPiece.swift in Sources */,
 				5C5F81342B91BCB000654123 /* Retro_GameApp.swift in Sources */,
 				5C61FD3A2B9E29BB00706884 /* ReversiDataClass.swift in Sources */,
