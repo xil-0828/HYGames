@@ -23,7 +23,15 @@ struct OnlineReversiRoom: View {
                 Button {
                     viewModel.AddData()
                     RoomName = UserName.UserName
-                    
+                    let arr = [-1, -1, -1, -1, -1, -1, -1, -1,
+                               -1, -1, -1, -1, -1, -1, -1, -1,
+                               -1, -1, -1, -1, -1, -1, -1, -1,
+                               -1, -1, -1,  1,  0, -1, -1, -1,
+                               -1, -1, -1,  0,  1, -1, -1, -1,
+                               -1, -1, -1, -1, -1, -1, -1, -1,
+                               -1, -1, -1, -1, -1, -1, -1, -1,
+                               -1, -1, -1, -1, -1, -1, -1, -1];
+                    db.collection(RoomName).document("\(0)").setData(["OthelloBoard": arr,"addCount": 0])
                 }label: {
                     Text("部屋を作る")
                 }

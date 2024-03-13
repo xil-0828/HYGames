@@ -21,7 +21,17 @@ struct OnlineReversiGame: View {
                     HStack(spacing: 0) {
                         ForEach(0..<8) { j in
                             Button {
-                                
+                                //オセロのコマをひっくり返す
+                                if(reversiBattleModel.TurnPlace.keys.contains(XY(x: i, y: j))) {
+                                    //何色にひっくり返すか
+                                    let x = (reversiBattleModel.addCount - 1) % 2
+                                    let turnplace = reversiBattleModel.TurnPlace[XY(x: i, y: j)]!
+                                    reversiBattleModel.reversiData.OthelloBoard[i][j] = x
+                                    for z in turnplace {
+                                        reversiBattleModel.reversiData.OthelloBoard[z.x][z.y] = x
+                                    }
+                                }
+                                reversiBattleModel.AddData()
                                 
                             }label: {
                                 ZStack {
@@ -32,6 +42,8 @@ struct OnlineReversiGame: View {
                                         Text("●")
                                     }else if(reversiBattleModel.reversiData.OthelloBoard[i][j] == 1) {
                                         Text("◯")
+                                    }else if(reversiBattleModel.TurnPlace.keys.contains(XY(x: i, y: j))) {
+                                        Text("x")
                                     }
                                 }
                             }
