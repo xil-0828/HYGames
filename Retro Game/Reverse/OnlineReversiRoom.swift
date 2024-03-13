@@ -9,28 +9,28 @@ import SwiftUI
 import FirebaseFirestore
 struct OnlineReversiRoom: View {
     @ObservedObject private var viewModel = ViewModel()
-    
     @Binding var isRoomView: Bool
     @State var db = Firestore.firestore()
     @State var isRoomButton = false
     @ObservedObject var UserName = NameChangeAppstorage()
     @State var isShowingSheet = false;
-    @State var RoomName = "";
+   
     var body: some View {
         ZStack {
             VStack {
-                
                 Text("オンライン対戦")
                     .font(.largeTitle)
-                
                 Button {
-                    db.collection("EmptyRoom").document(UserName.UserName).setData(["isEnterRoom": false])
+                    viewModel.AddData()
                     RoomName = UserName.UserName
+                    
                 }label: {
                     Text("部屋を作る")
                 }
                 .fullScreenCover(isPresented: $viewModel.isFullyRoom) {
+                    let _ = print(viewModel.isFullyRoom)
                     OnlineReversiGame()
+                        
                 }
                 Text("部屋に入る")
                 HStack {
@@ -40,8 +40,7 @@ struct OnlineReversiRoom: View {
                             db.collection("EmptyRoom").document(data.UserName).delete()
                             db.collection("FullyRoom").document(data.UserName).setData(["BlackUser": data.UserName,"WhiteUser":UserName.UserName])
                             RoomName = data.UserName
-                            viewModel.UserName = data.UserName
-                            viewModel.AddData()
+                            
                             isShowingSheet = true;
                         }label: {
                             ZStack {
@@ -63,9 +62,8 @@ struct OnlineReversiRoom: View {
             }
         }
         .onAppear {
-            viewModel.EmptyRoomData()
-            viewModel.FullyRoomData()
-            print(viewModel.emptyroomdata)
+            
+            print("isFullyRoom:\(viewModel.isFullyRoom)")
             viewModel.UserName = UserName.UserName
         }
     }

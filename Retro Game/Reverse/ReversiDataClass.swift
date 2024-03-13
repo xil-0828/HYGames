@@ -9,7 +9,7 @@ import Foundation
 import FirebaseFirestore
 struct ReversiData: Identifiable {
     var id: String = UUID().uuidString
-    var OthelloBoard:[Int]
+    var OthelloBoard:[[Int]]
     var TurnCount: Int
 }
 struct emptyRoomData: Hashable {
@@ -17,20 +17,20 @@ struct emptyRoomData: Hashable {
     var isEnterRoom: Bool
     var UserName: String
 }
+class RoomNameClass: ObservableObject {
+    @Published var RoomName: String = ""
+}
 class ViewModel: ObservableObject {
     
-    @Published var reversiData = ReversiData(OthelloBoard: [0], TurnCount: 0)
+    
     @Published var emptyroomdata = [emptyRoomData]()
     private var db = Firestore.firestore()
-    
-    @Published var CollectionsName = "init";
     @Published var addCount = 0;
     @Published var isFullyRoom = false
-    @Published var UserName = ""
-    func AddData() {
-        db.collection(UserName).document("\(addCount)").setData(["OthelloBoard": reversiData.OthelloBoard,"isInRoom": addCount])
-    }
-    func EmptyRoomData() {
+    @Published var UserName = "init"
+    
+    
+    init() {
         emptyroomdata.removeAll()
         db.collection("EmptyRoom").addSnapshotListener() { snapshot, error in
             
@@ -56,10 +56,6 @@ class ViewModel: ObservableObject {
                 // エラーを処理
             }
         }
-       
-        
-    }
-    func FullyRoomData() {
         db.collection("FullyRoom").addSnapshotListener() { snapshot, error in
             
             // エラーをチェック
@@ -82,7 +78,11 @@ class ViewModel: ObservableObject {
                 // エラーを処理
             }
         }
+        
     }
     
+    func AddData() {
+        db.collection("EmptyRoom").document(self.UserName).setData(["isEnterRoom": false])
+    }
 }
 

@@ -6,13 +6,59 @@
 //
 
 import SwiftUI
+import FirebaseFirestore
+//泣く泣くグローバル変数
+var RoomName = "";
 
-struct ReversiBattleDataClass: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+class ReversiBattleModel: ObservableObject {
+    private var db = Firestore.firestore()
+    @Published var addCount = 0;
+    @Published var reversiData = ReversiData(OthelloBoard: [[0]], TurnCount: 0)
+    
+    func AddData() {
+        var arr = [Int]();
+        
+        for i in 0..<reversiData.OthelloBoard.count {
+            
+            for j in 0..<reversiData.OthelloBoard[i].count {
+                arr.append(reversiData.OthelloBoard[i][j])
+            }
+            
+        }
+        print("arr:\(arr)")
+        db.collection(RoomName).document("\(addCount)").setData(["OthelloBoard": arr,"addCount": addCount])
     }
-}
-
-#Preview {
-    ReversiBattleDataClass()
+    init() {
+        
+        db.collection(RoomName).addSnapshotListener() { snapshot, error in
+            // エラーをチェック
+            if error == nil {
+                // エラーなし
+                
+                if let snapshot = snapshot {
+                    
+                    // すべてのドキュメントを取得してTodoを作成します
+                    snapshot.documents.map { doc in
+                        var count = 0;
+                        var arr = [[Int]]();
+                        let X = doc["OthelloBoard"] as! [Int]
+                        for _ in 0..<8 {
+                            var a = [Int]();
+                            for _ in 0..<8 {
+                                a.append(X[count])
+                                count += 1;
+                            }
+                            arr.append(a)
+                        }
+                        print(arr)
+                        self.reversiData = ReversiData(OthelloBoard: arr, TurnCount: doc["addCount"]as! Int)
+                    }
+                }
+                
+            }
+            else {
+                // エラーを処理
+            }
+        }
+    }
 }
