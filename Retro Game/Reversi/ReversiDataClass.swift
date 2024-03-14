@@ -42,7 +42,7 @@ class ViewModel: ObservableObject {
                     
                     // すべてのドキュメントを取得してTodoを作成します
                     snapshot.documents.map { doc in
-                        
+                        print("EmptyRoom")
                         if(doc["isEnterRoom"] as! Bool == false) {
                             self.emptyroomdata.append(emptyRoomData(isEnterRoom: (doc["isEnterRoom"] != nil), UserName: doc.documentID))
                             
@@ -68,6 +68,7 @@ class ViewModel: ObservableObject {
                     snapshot.documents.map { doc in
                         
                         if(doc.documentID == self.UserName) {
+                            print("FullyRoom")
                             self.isFullyRoom = true;
                         }
                     }
@@ -83,6 +84,7 @@ class ViewModel: ObservableObject {
     
     func AddData() {
         db.collection("EmptyRoom").document(self.UserName).setData(["isEnterRoom": false])
+        
     }
 }
 

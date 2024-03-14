@@ -8,16 +8,21 @@
 import SwiftUI
 import FirebaseFirestore
 struct OnlineReversiRoom: View {
-    @ObservedObject private var viewModel = ViewModel()
+    @StateObject private var viewModel = ViewModel()
     @Binding var isRoomView: Bool
     @State var db = Firestore.firestore()
     @State var isRoomButton = false
     @ObservedObject var UserName = NameChangeAppstorage()
     @State var isShowingSheet = false;
-   
+    @State var OthelloOrder = 0
+    @State var isFullyRoom = false
     var body: some View {
         ZStack {
+            
             VStack {
+                if(viewModel.isFullyRoom) {
+                    Text("反応したよー")
+                }
                 Text("オンライン対戦")
                     .font(.largeTitle)
                 Button {
@@ -36,8 +41,8 @@ struct OnlineReversiRoom: View {
                     Text("部屋を作る")
                 }
                 .fullScreenCover(isPresented: $viewModel.isFullyRoom) {
-                    let _ = print(viewModel.isFullyRoom)
-                    OnlineReversiGame()
+                    
+                    OnlineReversiGame(OthelloOrder: $OthelloOrder)
                         
                 }
                 Text("部屋に入る")
@@ -46,9 +51,10 @@ struct OnlineReversiRoom: View {
                     ForEach(viewModel.emptyroomdata, id: \.self) { data in
                         Button {
                             db.collection("EmptyRoom").document(data.UserName).delete()
+                            
                             db.collection("FullyRoom").document(data.UserName).setData(["BlackUser": data.UserName,"WhiteUser":UserName.UserName])
                             RoomName = data.UserName
-                            
+                            OthelloOrder = 1
                             isShowingSheet = true;
                         }label: {
                             ZStack {
@@ -61,7 +67,7 @@ struct OnlineReversiRoom: View {
                             }
                         }
                         .fullScreenCover(isPresented: $isShowingSheet) {
-                            OnlineReversiGame()
+                            OnlineReversiGame(OthelloOrder: $OthelloOrder)
                         }
                         
                         
@@ -71,8 +77,14 @@ struct OnlineReversiRoom: View {
         }
         .onAppear {
             
-            print("isFullyRoom:\(viewModel.isFullyRoom)")
+            
             viewModel.UserName = UserName.UserName
+            Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
+                if(viewModel.isFullyRoom) {
+                    isFullyRoom = viewModel.isFullyRoom
+                    
+                }
+            }
         }
     }
 }
