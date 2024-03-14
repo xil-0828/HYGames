@@ -16,6 +16,7 @@ class ReversiBattleModel: ObservableObject {
     @Published var reversiData = ReversiData(OthelloBoard: [[0]], TurnCount: 0)
     @Published var TurnPlace = [XY: [XY]]()
     @Published var isBoardData = false;
+    
     func AddData() {
         var arr = [Int]();
         

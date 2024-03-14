@@ -32,6 +32,7 @@
 		5C61FD402BA0AC5500706884 /* OnlineReversiGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C61FD3F2BA0AC5500706884 /* OnlineReversiGame.swift */; };
 		5C61FD422BA1E3B900706884 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5C61FD412BA1E3B900706884 /* GoogleService-Info.plist */; };
 		5C61FD442BA20FDD00706884 /* ReversiBattleDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C61FD432BA20FDD00706884 /* ReversiBattleDataClass.swift */; };
+		5C61FD622BA38EED00706884 /* MonitoringNetworkState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C61FD612BA38EED00706884 /* MonitoringNetworkState.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +50,7 @@
 		5C61FD3F2BA0AC5500706884 /* OnlineReversiGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnlineReversiGame.swift; sourceTree = "<group>"; };
 		5C61FD412BA1E3B900706884 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5C61FD432BA20FDD00706884 /* ReversiBattleDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReversiBattleDataClass.swift; sourceTree = "<group>"; };
+		5C61FD612BA38EED00706884 /* MonitoringNetworkState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonitoringNetworkState.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,11 +96,12 @@
 		5C5F81322B91BCB000654123 /* Retro Game */ = {
 			isa = PBXGroup;
 			children = (
+				5C61FD612BA38EED00706884 /* MonitoringNetworkState.swift */,
 				5C5F81332B91BCB000654123 /* Retro_GameApp.swift */,
 				5C5F81352B91BCB000654123 /* ContentView.swift */,
 				5C61FD412BA1E3B900706884 /* GoogleService-Info.plist */,
 				5C61FD3B2B9F310700706884 /* NameChange.swift */,
-				5C61FD182B95FF6400706884 /* Reverse */,
+				5C61FD182B95FF6400706884 /* Reversi */,
 				5C5F81392B91BCB200654123 /* Assets.xcassets */,
 				5C5F813B2B91BCB200654123 /* Preview Content */,
 			);
@@ -113,7 +116,7 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		5C61FD182B95FF6400706884 /* Reverse */ = {
+		5C61FD182B95FF6400706884 /* Reversi */ = {
 			isa = PBXGroup;
 			children = (
 				5C61FD3D2B9F44E500706884 /* OnlineReversiRoom.swift */,
@@ -124,7 +127,7 @@
 				5C61FD142B94B0CF00706884 /* ReverseGame.swift */,
 				5C61FD282B99881900706884 /* WhereWinner.swift */,
 			);
-			path = Reverse;
+			path = Reversi;
 			sourceTree = "<group>";
 		};
 		5C61FD342B9B66B300706884 /* Frameworks */ = {
@@ -223,6 +226,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5C5F81362B91BCB000654123 /* ContentView.swift in Sources */,
+				5C61FD622BA38EED00706884 /* MonitoringNetworkState.swift in Sources */,
 				5C61FD442BA20FDD00706884 /* ReversiBattleDataClass.swift in Sources */,
 				5C61FD402BA0AC5500706884 /* OnlineReversiGame.swift in Sources */,
 				5C61FD172B958B8A00706884 /* FindOthelloPiece.swift in Sources */,

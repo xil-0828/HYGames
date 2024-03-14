@@ -7,13 +7,38 @@
 
 import SwiftUI
 import FirebaseFirestore
+import Combine
 struct OnlineReversiGame: View {
     let deviceWidth = UIScreen.main.bounds.width
     let deviceHeight = UIScreen.main.bounds.height
     @Binding var OthelloOrder: Int
     @ObservedObject var reversiBattleModel = ReversiBattleModel()
     @State var isAppear = false;
-    
+    @StateObject var monitoringNetworkState = MonitoringNetworkState()
+    @State  private var count: Int = 0
+    @State  var timerPublisher: AnyCancellable?
+    @State  private var backgroundTaskID = UIBackgroundTaskIdentifier(rawValue: 0)
+    @Environment(\.scenePhase) private var scenePhase
+    private func backgroundCount() {
+        self.backgroundTaskID = UIApplication.shared.beginBackgroundTask {
+            UIApplication.shared.endBackgroundTask(backgroundTaskID)
+        }
+        timerPublisher = Timer.publish(every: 1, on: .current, in: .common)
+            .autoconnect()
+            .receive(on: DispatchQueue(label: "subthread", qos: .background))
+            .sink { _ in
+                print("発火！\(count)")
+                if((reversiBattleModel.addCount - 1) % 2 == OthelloOrder) {
+                    count += 1
+                    
+                }else {
+                    count = 0;
+                }
+                if count == 1000 {
+                    UIApplication.shared.endBackgroundTask(backgroundTaskID)
+                }
+            }
+    }
     var body: some View {
         let x = (reversiBattleModel.addCount - 1) % 2
         ZStack {
@@ -68,11 +93,21 @@ struct OnlineReversiGame: View {
                     .position(x:80,y:((deviceHeight / 2) + ((deviceWidth - 20) / 2)) + 10)
                     
             }
+            
         }
         .onAppear {
-            
-            
-            
+            backgroundCount()
+        }.onChange(of: scenePhase) { phase in
+            switch phase {
+            case .active:
+                print("フォアグラウンド")
+            case .inactive:
+                print("フォアグラウンド(作業を一時停止する必要)")
+            case .background:
+                print("バックグラウンド")
+            @unknown    default:
+                print("不明")
+            }
         }
        
         

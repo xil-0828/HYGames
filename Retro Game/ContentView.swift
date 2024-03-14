@@ -19,6 +19,7 @@ struct ContentView: View {
     @ObservedObject private var viewModel = ViewModel()
     @ObservedObject var UserName = NameChangeAppstorage()
     
+    
     var body: some View {
         NavigationView {
             VStack {
@@ -58,6 +59,7 @@ struct ContentView: View {
            
             
         }
+        
         .sheet(isPresented: $isNameChange) {
             NameChange(isNameChange: $isNameChange)
             .presentationDetents([.medium])

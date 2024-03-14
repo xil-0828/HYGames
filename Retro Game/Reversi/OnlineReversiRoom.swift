@@ -50,21 +50,36 @@ struct OnlineReversiRoom: View {
                     
                     ForEach(viewModel.emptyroomdata, id: \.self) { data in
                         Button {
-                            db.collection("EmptyRoom").document(data.UserName).delete()
-                            
-                            db.collection("FullyRoom").document(data.UserName).setData(["BlackUser": data.UserName,"WhiteUser":UserName.UserName])
-                            RoomName = data.UserName
-                            OthelloOrder = 1
-                            isShowingSheet = true;
-                        }label: {
-                            ZStack {
-                                Rectangle()
-                                    .foregroundColor(.blue)
-                                    .frame(width: 50,height: 50)
-                                Text(data.UserName)
-                                    .foregroundColor(.black)
+                            if(data.UserName != UserName.UserName) {
+                                db.collection("EmptyRoom").document(data.UserName).delete()
                                 
+                                db.collection("FullyRoom").document(data.UserName).setData(["BlackUser": data.UserName,"WhiteUser":UserName.UserName])
+                                RoomName = data.UserName
+                                OthelloOrder = 1
+                                isShowingSheet = true;
                             }
+                            
+                        }label: {
+                            if(data.UserName == UserName.UserName) {
+                                ZStack {
+                                    Rectangle()
+                                        .foregroundColor(.gray)
+                                        .frame(width: 50,height: 50)
+                                    Text(data.UserName)
+                                        .foregroundColor(.white)
+                                    
+                                }
+                            }else {
+                                ZStack {
+                                    Rectangle()
+                                        .foregroundColor(.blue)
+                                        .frame(width: 50,height: 50)
+                                    Text(data.UserName)
+                                        .foregroundColor(.black)
+                                    
+                                }
+                            }
+                            
                         }
                         .fullScreenCover(isPresented: $isShowingSheet) {
                             OnlineReversiGame(OthelloOrder: $OthelloOrder)
