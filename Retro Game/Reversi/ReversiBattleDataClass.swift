@@ -16,7 +16,8 @@ class ReversiBattleModel: ObservableObject {
     @Published var reversiData = ReversiData(OthelloBoard: [[0]], TurnCount: 0)
     @Published var TurnPlace = [XY: [XY]]()
     @Published var isBoardData = false;
-    
+    @Published var Winner = 0;
+    @Published var GameFinish = false
     func AddData() {
         var arr = [Int]();
         
@@ -29,6 +30,20 @@ class ReversiBattleModel: ObservableObject {
         }
         print("arr:\(arr)")
         db.collection(RoomName).document("\(addCount)").setData(["OthelloBoard": arr,"addCount": addCount])
+    }
+    func DeleteData() {
+        Firestore.firestore().collection(RoomName).getDocuments { (snapshot, error) in
+            if let error = error{
+                print("エラー",error)
+                return
+            }
+            
+            for document in snapshot!.documents{
+                document.reference.delete()
+            }
+            
+        }
+        Firestore.firestore().collection("FullyRoom").document(RoomName).delete()
     }
     init() {
         
@@ -70,7 +85,14 @@ class ReversiBattleModel: ObservableObject {
             if(self.isBoardData) {
                 self.TurnPlace = FindOthelloPiece(OthelloBoard: self.reversiData.OthelloBoard, OthelloOrder: (self.addCount) % 2)
                 self.addCount += 1
-                print("TurnPlace\(self.TurnPlace)")
+                if(self.TurnPlace.count == 0) {
+                    self.TurnPlace = FindOthelloPiece(OthelloBoard: self.reversiData.OthelloBoard, OthelloOrder: (self.addCount) % 2)
+                    self.addCount += 1
+                    if(self.TurnPlace.count == 0) {
+                        self.Winner = WhereWinner(OthelloBoard: self.reversiData.OthelloBoard)
+                        self.GameFinish = true
+                    }
+                }
                 self.isBoardData = false
             }
             

@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Neumorphic
 
 struct XY: Hashable {
     var x: Int
@@ -39,10 +40,58 @@ struct ReverseGame: View {
     @State var Winner = 0;
     @Environment(\.presentationMode) var presentation
     @State private var gameResetToken = UUID()
+    @ObservedObject var UserName = NameChangeAppstorage()
     var body: some View {
         ZStack {
-            
+            Color.Neumorphic.main.ignoresSafeArea()
             VStack(spacing: 0) {
+                if(OthelloOrder == 0) {
+                    HStack {
+                        Spacer().frame(width: 5)
+                        ZStack(alignment: .leading
+                        ) {
+                            RoundedRectangle(cornerRadius: 10).fill(Color.Neumorphic.main).softInnerShadow(RoundedRectangle(cornerRadius: 10))
+                                .frame(width: deviceWidth * 0.4, height: 50)
+                            
+                            HStack {
+                                Spacer().frame(width: 10)
+                                Circle()
+                                    .frame(width: (deviceWidth - 20) / 10.5, height: (deviceWidth - 20) / 10.5)
+                                    .modifier(NeumorphismModifier())
+                                Spacer()
+                                Text("2")
+                                Spacer().frame(width: 10)
+                                
+                            }
+                            .frame(width: deviceWidth * 0.4)
+                        }
+                        Spacer()
+                    }
+                
+                }else {
+                    HStack {
+                        Spacer().frame(width: 5)
+                        ZStack(alignment: .leading
+                        ) {
+                            RoundedRectangle(cornerRadius: 10).fill(Color.Neumorphic.main).softOuterShadow()
+                                .frame(width: deviceWidth * 0.4, height: 50)
+                            
+                            HStack {
+                                Spacer().frame(width: 10)
+                                Circle()
+                                    .frame(width: (deviceWidth - 20) / 10.5, height: (deviceWidth - 20) / 10.5)
+                                    .modifier(NeumorphismModifier())
+                                Spacer()
+                                Text("2")
+                                Spacer().frame(width: 10)
+                                
+                            }
+                            .frame(width: deviceWidth * 0.4)
+                        }
+                        Spacer()
+                    }
+                }
+                Spacer().frame(height: 40)
                 ForEach(0..<8) { i in
                     HStack(spacing: 0) {
                         ForEach(0..<8) { j in
@@ -69,16 +118,24 @@ struct ReverseGame: View {
                             }label: {
                                 ZStack {
                                     Rectangle()
-                                        .stroke(Color.black, lineWidth: 0.5)
-                                        .frame(width: (deviceWidth - 20) / 8, height: (deviceWidth - 20) / 8)
+                                        .stroke(Color(red: 197/255, green: 200/255, blue: 209/255), lineWidth: 0.5)
+                                        .frame(width: (deviceWidth - 10) / 8, height: (deviceWidth - 10) / 8)
                                     if(OthelloBoard[i][j] == 1) {
-                                        Text("◯")
-                                            .foregroundColor(Color.black)
+                                        Circle().fill(Color.Neumorphic.main).softOuterShadow()
+                                            .frame(width: (deviceWidth - 20) / 10.5, height: (deviceWidth - 20) / 10.5)
                                     }else if(OthelloBoard[i][j] == 0 ) {
-                                        Text("●")
-                                            .foregroundColor(Color.black)
+                                        Circle()
+                                            .frame(width: (deviceWidth - 20) / 10.5, height: (deviceWidth - 20) / 10.5)
+                                            .modifier(NeumorphismModifier())
+//                                        Circle()
+//                                            .fill(Color(red: 87/255, green: 95/255, blue: 107/255))
+//                                            .frame(width: (deviceWidth - 20) / 10.5, height: (deviceWidth - 20) / 10.5)
+//                                            .shadow(color: Color(red: 87/255, green: 95/255, blue: 107/255), radius: 16, x: -8, y: -8)
+                                        
+                                        
                                     }else if(OthelloPlace.keys.contains(XY(x: i, y: j))) {
-                                        Text("x")
+                                        Circle().fill(Color.Neumorphic.main).softInnerShadow(Circle())
+                                            .frame(width: (deviceWidth - 20) / 10.5, height: (deviceWidth - 20) / 10.5)
                                     }
                                     
                                 }
@@ -86,11 +143,54 @@ struct ReverseGame: View {
                         }
                     }
                 }
-                
-                
+                Spacer().frame(height: 40)
+                if(OthelloOrder == 0) {
+                    HStack {
+                        Spacer()
+                        ZStack(alignment: .leading
+                        ) {
+                            RoundedRectangle(cornerRadius: 10).fill(Color.Neumorphic.main).softOuterShadow()
+                                .frame(width: deviceWidth * 0.4, height: 50)
+                            
+                            
+                            HStack {
+                                Spacer().frame(width: 10)
+                                Circle().fill(Color.Neumorphic.main).softOuterShadow()
+                                    .frame(width: (deviceWidth - 20) / 10.5, height: (deviceWidth - 20) / 10.5)
+                                Spacer()
+                                Text("2")
+                                Spacer().frame(width: 10)
+                            }
+                            .frame(width: deviceWidth * 0.4)
+                        }
+                        Spacer().frame(width: 5)
+                    }
+                                    
+                }else {
+                    HStack {
+                        
+                        Spacer()
+                        ZStack(alignment: .leading
+                        ) {
+                            RoundedRectangle(cornerRadius: 10).fill(Color.Neumorphic.main).softInnerShadow(RoundedRectangle(cornerRadius: 10))
+                                .frame(width: deviceWidth * 0.4, height: 50)
+                            
+                            
+                            HStack {
+                                Spacer().frame(width: 10)
+                                Circle().fill(Color.Neumorphic.main).softOuterShadow()
+                                    .frame(width: (deviceWidth - 20) / 10.5, height: (deviceWidth - 20) / 10.5)
+                                Spacer()
+                                Text("2")
+                                Spacer().frame(width: 10)
+                            }
+                            .frame(width: deviceWidth * 0.4)
+                        }
+                        Spacer().frame(width: 5)
+                    }
+                }
             }
             .alert("GameSet", isPresented: $GameFinish) {
-                        // ダイアログ内で行うアクション処理...
                 Button("スタートに戻る") {
                     self.presentation.wrappedValue.dismiss()
                 }
@@ -104,11 +204,36 @@ struct ReverseGame: View {
                         
             }
             if(OthelloOrder == 0) {
-                Text("白のターンです")
-                    .position(x:80,y:((deviceHeight / 2) + ((deviceWidth - 20) / 2)) + 10)
+                
+                
+
             }else {
-                Text("黒のターンです")
-                    .position(x:80,y:((deviceHeight / 2) + ((deviceWidth - 20) / 2)) + 10)
+//                ZStack {
+//                    RoundedRectangle(cornerRadius: 10).fill(Color.Neumorphic.main).softOuterShadow()
+//                        .frame(width: deviceWidth * 0.6, height: 50)
+//                        
+//                    HStack {
+//                        Circle()
+//                            .frame(width: (deviceWidth - 20) / 10.5, height: (deviceWidth - 20) / 10.5)
+//                            .modifier(NeumorphismModifier())
+//                        Text(UserName.UserName)
+//                        Text("2")
+//                    }
+//                }
+//                
+//                
+//                ZStack {
+//                    RoundedRectangle(cornerRadius: 10).fill(Color.Neumorphic.main).softInnerShadow(RoundedRectangle(cornerRadius: 10))
+//                        .frame(width: deviceWidth * 0.6, height: 50)
+//                        
+//                    HStack {
+//                        Circle().fill(Color.Neumorphic.main).softOuterShadow()
+//                            .frame(width: (deviceWidth - 20) / 10.5, height: (deviceWidth - 20) / 10.5)
+//                        Text(UserName.UserName)
+//                        Text("2")
+//                    }
+//                }
+                
                     
             }
             
@@ -125,3 +250,32 @@ struct ReverseGame: View {
 #Preview {
     ReverseGame()
 }
+import SwiftUI
+
+
+
+struct NeumorphismModifier: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .foregroundStyle(color.ForegroundColor)
+            .shadow(color: color.LightShadowColor, radius: 3.0, x: 3.0, y: 3.0)
+            .shadow(color: color.DarkShadowColor, radius: 3.0, x: -3.0, y: -3.0)
+    }
+}
+
+class color {
+    static let BaseColor: Color = Color(red: 0.3450978696346283, green: 0.37254902720451355, blue: 0.4156862497329712)
+    static let LightShadowColor: Color = Color(red: 0.2666664719581604, green: 0.29411762952804565, blue: 0.3372548520565033)
+    static let DarkShadowColor: Color = Color(red: 1.0078431367874146, green: 1.0117647647857666, blue: 1.0274510383605957)
+    static let ForegroundColor: LinearGradient = LinearGradient(gradient: Gradient(colors: [Color(red: 0.3450978696346283, green: 0.37254902720451355, blue: 0.4156862497329712), Color(red: 0.3450978696346283, green: 0.37254902720451355, blue: 0.4156862497329712)]), startPoint: .topLeading, endPoint: .bottomTrailing)
+}
+import SwiftUI
+
+
+
+//class color {
+//    static let BaseColor: Color = Color(red: 0.929411768913269, green: 0.9333333373069763, blue: 0.9490196108818054)
+//    static let LightShadowColor: Color = Color(red: 0.8509804010391235, green: 0.8549019694328308, blue: 0.8705882430076599)
+//    static let DarkShadowColor: Color = Color(red: 1.0078431367874146, green: 1.0117647647857666, blue: 1.0274510383605957)
+//    static let ForegroundColor: LinearGradient = LinearGradient(gradient: Gradient(colors: [Color(red: 0.929411768913269, green: 0.9333333373069763, blue: 0.9490196108818054), Color(red: 0.929411768913269, green: 0.9333333373069763, blue: 0.9490196108818054)]), startPoint: .topLeading, endPoint: .bottomTrailing)
+//}

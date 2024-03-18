@@ -33,6 +33,8 @@
 		5C61FD422BA1E3B900706884 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5C61FD412BA1E3B900706884 /* GoogleService-Info.plist */; };
 		5C61FD442BA20FDD00706884 /* ReversiBattleDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C61FD432BA20FDD00706884 /* ReversiBattleDataClass.swift */; };
 		5C61FD622BA38EED00706884 /* MonitoringNetworkState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C61FD612BA38EED00706884 /* MonitoringNetworkState.swift */; };
+		5C61FD672BA48A6400706884 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C61FD662BA48A6400706884 /* MainView.swift */; };
+		5C61FD6A2BA86E5B00706884 /* Neumorphic in Frameworks */ = {isa = PBXBuildFile; productRef = 5C61FD692BA86E5B00706884 /* Neumorphic */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +53,7 @@
 		5C61FD412BA1E3B900706884 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5C61FD432BA20FDD00706884 /* ReversiBattleDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReversiBattleDataClass.swift; sourceTree = "<group>"; };
 		5C61FD612BA38EED00706884 /* MonitoringNetworkState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonitoringNetworkState.swift; sourceTree = "<group>"; };
+		5C61FD662BA48A6400706884 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +69,7 @@
 				5C61FD382B9B671300706884 /* FirebaseFirestore in Frameworks */,
 				5C61FD362B9B66B300706884 /* FirebaseFirestoreSwift in Frameworks */,
 				5C61FD202B9613C200706884 /* FirebaseAnalyticsOnDeviceConversion in Frameworks */,
+				5C61FD6A2BA86E5B00706884 /* Neumorphic in Frameworks */,
 				5C61FD262B9613C200706884 /* FirebaseAppCheck in Frameworks */,
 				5C61FD312B9B662A00706884 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */,
 				5C61FD332B9B662A00706884 /* FirebaseAppCheck in Frameworks */,
@@ -101,6 +105,7 @@
 				5C5F81352B91BCB000654123 /* ContentView.swift */,
 				5C61FD412BA1E3B900706884 /* GoogleService-Info.plist */,
 				5C61FD3B2B9F310700706884 /* NameChange.swift */,
+				5C61FD632BA489FC00706884 /* SuikaGame */,
 				5C61FD182B95FF6400706884 /* Reversi */,
 				5C5F81392B91BCB200654123 /* Assets.xcassets */,
 				5C5F813B2B91BCB200654123 /* Preview Content */,
@@ -137,6 +142,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		5C61FD632BA489FC00706884 /* SuikaGame */ = {
+			isa = PBXGroup;
+			children = (
+				5C61FD662BA48A6400706884 /* MainView.swift */,
+			);
+			path = SuikaGame;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -166,6 +179,7 @@
 				5C61FD322B9B662A00706884 /* FirebaseAppCheck */,
 				5C61FD352B9B66B300706884 /* FirebaseFirestoreSwift */,
 				5C61FD372B9B671300706884 /* FirebaseFirestore */,
+				5C61FD692BA86E5B00706884 /* Neumorphic */,
 			);
 			productName = "Retro Game";
 			productReference = 5C5F81302B91BCB000654123 /* Retro Game.app */;
@@ -197,6 +211,7 @@
 			mainGroup = 5C5F81272B91BCB000654123;
 			packageReferences = (
 				5C61FD1C2B9613C200706884 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				5C61FD682BA86E5B00706884 /* XCRemoteSwiftPackageReference "neumorphic" */,
 			);
 			productRefGroup = 5C5F81312B91BCB000654123 /* Products */;
 			projectDirPath = "";
@@ -226,6 +241,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5C5F81362B91BCB000654123 /* ContentView.swift in Sources */,
+				5C61FD672BA48A6400706884 /* MainView.swift in Sources */,
 				5C61FD622BA38EED00706884 /* MonitoringNetworkState.swift in Sources */,
 				5C61FD442BA20FDD00706884 /* ReversiBattleDataClass.swift in Sources */,
 				5C61FD402BA0AC5500706884 /* OnlineReversiGame.swift in Sources */,
@@ -459,6 +475,14 @@
 				minimumVersion = 10.21.0;
 			};
 		};
+		5C61FD682BA86E5B00706884 /* XCRemoteSwiftPackageReference "neumorphic" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/costachung/neumorphic/";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -516,6 +540,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 5C61FD1C2B9613C200706884 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseFirestore;
+		};
+		5C61FD692BA86E5B00706884 /* Neumorphic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5C61FD682BA86E5B00706884 /* XCRemoteSwiftPackageReference "neumorphic" */;
+			productName = Neumorphic;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

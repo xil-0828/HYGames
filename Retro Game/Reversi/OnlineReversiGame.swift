@@ -27,12 +27,9 @@ struct OnlineReversiGame: View {
             .autoconnect()
             .receive(on: DispatchQueue(label: "subthread", qos: .background))
             .sink { _ in
-                print("発火！\(count)")
+                
                 if((reversiBattleModel.addCount - 1) % 2 == OthelloOrder) {
-                    count += 1
-                    
-                }else {
-                    count = 0;
+                    count -= 1
                 }
                 if count == 1000 {
                     UIApplication.shared.endBackgroundTask(backgroundTaskID)
@@ -48,8 +45,6 @@ struct OnlineReversiGame: View {
                         ForEach(0..<8) { j in
                             Button {
                                 //オセロのコマをひっくり返す
-                                
-                                
                                 if(reversiBattleModel.TurnPlace.keys.contains(XY(x: i, y: j)) && x == OthelloOrder) {
                                     //何色にひっくり返すか
                                     
@@ -86,12 +81,16 @@ struct OnlineReversiGame: View {
                 
             }
             if(OthelloOrder == x) {
-                Text("あなたのターンです")
+                Text("あなたのターンです。count:\(count)")
                     .position(x:80,y:((deviceHeight / 2) + ((deviceWidth - 20) / 2)) + 10)
             }else {
                 Text("相手のターンです")
                     .position(x:80,y:((deviceHeight / 2) + ((deviceWidth - 20) / 2)) + 10)
                     
+            }
+            if(reversiBattleModel.GameFinish) {
+                Text("ゲーム終了")
+                    .position(x:80,y:((deviceHeight / 2) + ((deviceWidth - 20) / 2)) + 10)
             }
             
         }
@@ -105,8 +104,17 @@ struct OnlineReversiGame: View {
                 print("フォアグラウンド(作業を一時停止する必要)")
             case .background:
                 print("バックグラウンド")
+                
             @unknown    default:
                 print("不明")
+            }
+        }.onChange(of:reversiBattleModel.addCount) { x in
+            if((reversiBattleModel.addCount - 1) % 2 != OthelloOrder) {
+                count = 30
+            }
+        }.onChange(of: reversiBattleModel.GameFinish) { x in
+            if(x) {
+                reversiBattleModel.DeleteData()
             }
         }
        
