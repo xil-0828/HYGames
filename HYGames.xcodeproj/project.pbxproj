@@ -33,8 +33,8 @@
 		5C61FD422BA1E3B900706884 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5C61FD412BA1E3B900706884 /* GoogleService-Info.plist */; };
 		5C61FD442BA20FDD00706884 /* ReversiBattleDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C61FD432BA20FDD00706884 /* ReversiBattleDataClass.swift */; };
 		5C61FD622BA38EED00706884 /* MonitoringNetworkState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C61FD612BA38EED00706884 /* MonitoringNetworkState.swift */; };
-		5C61FD672BA48A6400706884 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C61FD662BA48A6400706884 /* MainView.swift */; };
 		5C61FD6A2BA86E5B00706884 /* Neumorphic in Frameworks */ = {isa = PBXBuildFile; productRef = 5C61FD692BA86E5B00706884 /* Neumorphic */; };
+		5CB202472BA9D93100BD70C8 /* Sofia Pro Regular Az.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5CB202452BA9D90C00BD70C8 /* Sofia Pro Regular Az.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,7 +53,8 @@
 		5C61FD412BA1E3B900706884 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5C61FD432BA20FDD00706884 /* ReversiBattleDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReversiBattleDataClass.swift; sourceTree = "<group>"; };
 		5C61FD612BA38EED00706884 /* MonitoringNetworkState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonitoringNetworkState.swift; sourceTree = "<group>"; };
-		5C61FD662BA48A6400706884 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		5CB202452BA9D90C00BD70C8 /* Sofia Pro Regular Az.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Sofia Pro Regular Az.otf"; sourceTree = "<group>"; };
+		5CB202482BA9D96A00BD70C8 /* Retro-Game-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Retro-Game-Info.plist"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +101,7 @@
 		5C5F81322B91BCB000654123 /* Retro Game */ = {
 			isa = PBXGroup;
 			children = (
+				5CB202482BA9D96A00BD70C8 /* Retro-Game-Info.plist */,
 				5C61FD612BA38EED00706884 /* MonitoringNetworkState.swift */,
 				5C5F81332B91BCB000654123 /* Retro_GameApp.swift */,
 				5C5F81352B91BCB000654123 /* ContentView.swift */,
@@ -108,6 +110,7 @@
 				5C61FD632BA489FC00706884 /* SuikaGame */,
 				5C61FD182B95FF6400706884 /* Reversi */,
 				5C5F81392B91BCB200654123 /* Assets.xcassets */,
+				5CB202462BA9D91A00BD70C8 /* Fonts */,
 				5C5F813B2B91BCB200654123 /* Preview Content */,
 			);
 			path = "Retro Game";
@@ -145,9 +148,16 @@
 		5C61FD632BA489FC00706884 /* SuikaGame */ = {
 			isa = PBXGroup;
 			children = (
-				5C61FD662BA48A6400706884 /* MainView.swift */,
 			);
 			path = SuikaGame;
+			sourceTree = "<group>";
+		};
+		5CB202462BA9D91A00BD70C8 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				5CB202452BA9D90C00BD70C8 /* Sofia Pro Regular Az.otf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -230,6 +240,7 @@
 				5C5F813D2B91BCB200654123 /* Preview Assets.xcassets in Resources */,
 				5C5F813A2B91BCB200654123 /* Assets.xcassets in Resources */,
 				5C61FD422BA1E3B900706884 /* GoogleService-Info.plist in Resources */,
+				5CB202472BA9D93100BD70C8 /* Sofia Pro Regular Az.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -241,7 +252,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				5C5F81362B91BCB000654123 /* ContentView.swift in Sources */,
-				5C61FD672BA48A6400706884 /* MainView.swift in Sources */,
 				5C61FD622BA38EED00706884 /* MonitoringNetworkState.swift in Sources */,
 				5C61FD442BA20FDD00706884 /* ReversiBattleDataClass.swift in Sources */,
 				5C61FD402BA0AC5500706884 /* OnlineReversiGame.swift in Sources */,
@@ -383,22 +393,24 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"Retro Game/Preview Content\"";
 				DEVELOPMENT_TEAM = YTQW99BMDM;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Retro-Game-Info.plist";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.games";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "myproject.Retro-Game";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -406,7 +418,7 @@
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -416,22 +428,24 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"Retro Game/Preview Content\"";
 				DEVELOPMENT_TEAM = YTQW99BMDM;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Retro-Game-Info.plist";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.games";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "myproject.Retro-Game";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -439,7 +453,7 @@
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
