@@ -7,6 +7,7 @@
 
 import SwiftUI
 import FirebaseFirestore
+import Neumorphic
 struct OnlineReversiRoom: View {
     @StateObject private var viewModel = ViewModel()
     @Binding var isRoomView: Bool
@@ -18,13 +19,19 @@ struct OnlineReversiRoom: View {
     @State var isFullyRoom = false
     var body: some View {
         ZStack {
+            Color.black
+                .opacity(0.2)
+                .edgesIgnoringSafeArea(.all)
+            
             
             VStack {
-                if(viewModel.isFullyRoom) {
-                    Text("反応したよー")
-                }
-                Text("オンライン対戦")
-                    .font(.largeTitle)
+                Text("Online")
+                    .font(.custom("SofiaPro", size: 15))
+                    .foregroundColor(Color(red: 87/255, green: 95/255, blue: 107/255))
+                Divider()
+                    .frame(width: UIScreen.main.bounds.width / 1.1 * 0.7)
+                Spacer()
+                    .frame(height: UIScreen.main.bounds.height * 0.02)
                 Button {
                     viewModel.AddData()
                     RoomName = UserName.UserName
@@ -38,44 +45,57 @@ struct OnlineReversiRoom: View {
                                -1, -1, -1, -1, -1, -1, -1, -1];
                     db.collection(RoomName).document("\(0)").setData(["OthelloBoard": arr,"addCount": 0])
                 }label: {
-                    Text("部屋を作る")
+                    ZStack {
+                        RoundedRectangle(cornerRadius: 5).fill(Color.Neumorphic.main).softOuterShadow()
+                            .frame(width: UIScreen.main.bounds.width / 1.1 * 0.5,height: 40)
+                        Text("Create Room")
+                            .font(.custom("SofiaPro", size: 15))
+                            .foregroundColor(Color(red: 87/255, green: 95/255, blue: 107/255))
+                    }
+                    
+                    
                 }
                 .fullScreenCover(isPresented: $viewModel.isFullyRoom) {
-                    
                     OnlineReversiGame(OthelloOrder: $OthelloOrder)
-                        
                 }
-                Text("部屋に入る")
+                Spacer()
+                    .frame(height: UIScreen.main.bounds.height * 0.04)
+                Text("All Room")
+                    .font(.custom("SofiaPro", size: 15))
+                    .foregroundColor(Color(red: 87/255, green: 95/255, blue: 107/255))
+                Divider()
+                    .frame(width: UIScreen.main.bounds.width / 1.1 * 0.7)
+                Spacer()
+                    .frame(height: UIScreen.main.bounds.height * 0.02)
                 HStack {
                     
                     ForEach(viewModel.emptyroomdata, id: \.self) { data in
                         Button {
                             if(data.UserName != UserName.UserName) {
                                 db.collection("EmptyRoom").document(data.UserName).delete()
-                                
                                 db.collection("FullyRoom").document(data.UserName).setData(["BlackUser": data.UserName,"WhiteUser":UserName.UserName])
                                 RoomName = data.UserName
                                 OthelloOrder = 1
                                 isShowingSheet = true;
                             }
+                                
                             
                         }label: {
                             if(data.UserName == UserName.UserName) {
                                 ZStack {
-                                    Rectangle()
-                                        .foregroundColor(.gray)
-                                        .frame(width: 50,height: 50)
+                                    RoundedRectangle(cornerRadius: 5).fill(Color.Neumorphic.main).softInnerShadow(RoundedRectangle(cornerRadius: 5))
+                                        .frame(width: 50, height: 50)
                                     Text(data.UserName)
-                                        .foregroundColor(.white)
-                                    
+                                        .font(.custom("SofiaPro", size: 12))
+                                        .foregroundColor(Color(red: 87/255, green: 95/255, blue: 107/255))
                                 }
                             }else {
                                 ZStack {
-                                    Rectangle()
-                                        .foregroundColor(.blue)
+                                    RoundedRectangle(cornerRadius: 5).fill(Color.Neumorphic.main).softOuterShadow()
                                         .frame(width: 50,height: 50)
                                     Text(data.UserName)
-                                        .foregroundColor(.black)
+                                        .font(.custom("SofiaPro", size: 12))
+                                        .foregroundColor(Color(red: 87/255, green: 95/255, blue: 107/255))
                                     
                                 }
                             }
@@ -84,11 +104,25 @@ struct OnlineReversiRoom: View {
                         .fullScreenCover(isPresented: $isShowingSheet) {
                             OnlineReversiGame(OthelloOrder: $OthelloOrder)
                         }
-                        
-                        
                     }
                 }
             }
+            .frame(width: UIScreen.main.bounds.width / 1.1,height: UIScreen.main.bounds.width / 1.4)
+            .background(Color(red: 235/255, green: 240/255, blue: 243/255))
+            .cornerRadius(15)
+            Button {
+                isRoomView.toggle()
+            }label: {
+                ZStack {
+                    
+                    Image(systemName: "x.circle.fill")
+                        .foregroundColor(.gray)
+                        .font(.system(size: 25))
+                }
+                
+                
+            }
+            .offset(x: UIScreen.main.bounds.width / 1.1 / 2 * 0.9,y: (UIScreen.main.bounds.width / 1.4 / 2 * 0.9) * -1)
         }
         .onAppear {
             

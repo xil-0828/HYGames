@@ -27,7 +27,7 @@ struct Retro_GameApp: App {
   var body: some Scene {
     WindowGroup {
       NavigationView {
-        ContentView()
+        MainView()
       }
     }
   }

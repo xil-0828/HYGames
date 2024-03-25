@@ -27,3 +27,19 @@ func WhereWinner(OthelloBoard: [[Int]]) -> Int {
     }
     return Answer
 }
+func BoardCount(OthelloBoard: [[Int]]) -> (black:Int, white: Int) {
+    var BlackCount = 0;
+    var WhiteCount = 0;
+    for i in 0...7 {
+        for j in 0...7 {
+            if(OthelloBoard[i][j] == 0) {
+                BlackCount += 1;
+            }else if(OthelloBoard[i][j] == 1) {
+                WhiteCount += 1;
+            }
+        }
+    }
+    
+    
+    return (BlackCount,WhiteCount)
+}

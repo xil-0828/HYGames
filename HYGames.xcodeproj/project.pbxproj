@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5C5F81342B91BCB000654123 /* Retro_GameApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5F81332B91BCB000654123 /* Retro_GameApp.swift */; };
-		5C5F81362B91BCB000654123 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5F81352B91BCB000654123 /* ContentView.swift */; };
+		5C5F81362B91BCB000654123 /* ReversiMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5F81352B91BCB000654123 /* ReversiMainView.swift */; };
 		5C5F813A2B91BCB200654123 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C5F81392B91BCB200654123 /* Assets.xcassets */; };
 		5C5F813D2B91BCB200654123 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C5F813C2B91BCB200654123 /* Preview Assets.xcassets */; };
 		5C61FD152B94B0CF00706884 /* ReverseGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C61FD142B94B0CF00706884 /* ReverseGame.swift */; };
@@ -35,12 +35,13 @@
 		5C61FD622BA38EED00706884 /* MonitoringNetworkState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C61FD612BA38EED00706884 /* MonitoringNetworkState.swift */; };
 		5C61FD6A2BA86E5B00706884 /* Neumorphic in Frameworks */ = {isa = PBXBuildFile; productRef = 5C61FD692BA86E5B00706884 /* Neumorphic */; };
 		5CB202472BA9D93100BD70C8 /* Sofia Pro Regular Az.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5CB202452BA9D90C00BD70C8 /* Sofia Pro Regular Az.otf */; };
+		5CB2024F2BABF54100BD70C8 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB2024E2BABF54100BD70C8 /* MainView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		5C5F81302B91BCB000654123 /* Retro Game.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Retro Game.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5C5F81302B91BCB000654123 /* HYGames.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HYGames.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C5F81332B91BCB000654123 /* Retro_GameApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Retro_GameApp.swift; sourceTree = "<group>"; };
-		5C5F81352B91BCB000654123 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		5C5F81352B91BCB000654123 /* ReversiMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReversiMainView.swift; sourceTree = "<group>"; };
 		5C5F81392B91BCB200654123 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5C5F813C2B91BCB200654123 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		5C61FD142B94B0CF00706884 /* ReverseGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReverseGame.swift; sourceTree = "<group>"; };
@@ -55,6 +56,7 @@
 		5C61FD612BA38EED00706884 /* MonitoringNetworkState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonitoringNetworkState.swift; sourceTree = "<group>"; };
 		5CB202452BA9D90C00BD70C8 /* Sofia Pro Regular Az.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Sofia Pro Regular Az.otf"; sourceTree = "<group>"; };
 		5CB202482BA9D96A00BD70C8 /* Retro-Game-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Retro-Game-Info.plist"; sourceTree = SOURCE_ROOT; };
+		5CB2024E2BABF54100BD70C8 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,7 +95,7 @@
 		5C5F81312B91BCB000654123 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				5C5F81302B91BCB000654123 /* Retro Game.app */,
+				5C5F81302B91BCB000654123 /* HYGames.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -104,10 +106,9 @@
 				5CB202482BA9D96A00BD70C8 /* Retro-Game-Info.plist */,
 				5C61FD612BA38EED00706884 /* MonitoringNetworkState.swift */,
 				5C5F81332B91BCB000654123 /* Retro_GameApp.swift */,
-				5C5F81352B91BCB000654123 /* ContentView.swift */,
+				5CB2024E2BABF54100BD70C8 /* MainView.swift */,
 				5C61FD412BA1E3B900706884 /* GoogleService-Info.plist */,
 				5C61FD3B2B9F310700706884 /* NameChange.swift */,
-				5C61FD632BA489FC00706884 /* SuikaGame */,
 				5C61FD182B95FF6400706884 /* Reversi */,
 				5C5F81392B91BCB200654123 /* Assets.xcassets */,
 				5CB202462BA9D91A00BD70C8 /* Fonts */,
@@ -127,6 +128,7 @@
 		5C61FD182B95FF6400706884 /* Reversi */ = {
 			isa = PBXGroup;
 			children = (
+				5C5F81352B91BCB000654123 /* ReversiMainView.swift */,
 				5C61FD3D2B9F44E500706884 /* OnlineReversiRoom.swift */,
 				5C61FD162B958B8A00706884 /* FindOthelloPiece.swift */,
 				5C61FD392B9E29BB00706884 /* ReversiDataClass.swift */,
@@ -145,13 +147,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		5C61FD632BA489FC00706884 /* SuikaGame */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = SuikaGame;
-			sourceTree = "<group>";
-		};
 		5CB202462BA9D91A00BD70C8 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -163,9 +158,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		5C5F812F2B91BCB000654123 /* Retro Game */ = {
+		5C5F812F2B91BCB000654123 /* HYGames */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5C5F81402B91BCB200654123 /* Build configuration list for PBXNativeTarget "Retro Game" */;
+			buildConfigurationList = 5C5F81402B91BCB200654123 /* Build configuration list for PBXNativeTarget "HYGames" */;
 			buildPhases = (
 				5C5F812C2B91BCB000654123 /* Sources */,
 				5C5F812D2B91BCB000654123 /* Frameworks */,
@@ -175,7 +170,7 @@
 			);
 			dependencies = (
 			);
-			name = "Retro Game";
+			name = HYGames;
 			packageProductDependencies = (
 				5C61FD1D2B9613C200706884 /* FirebaseAnalytics */,
 				5C61FD1F2B9613C200706884 /* FirebaseAnalyticsOnDeviceConversion */,
@@ -192,7 +187,7 @@
 				5C61FD692BA86E5B00706884 /* Neumorphic */,
 			);
 			productName = "Retro Game";
-			productReference = 5C5F81302B91BCB000654123 /* Retro Game.app */;
+			productReference = 5C5F81302B91BCB000654123 /* HYGames.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -210,7 +205,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 5C5F812B2B91BCB000654123 /* Build configuration list for PBXProject "Retro Game" */;
+			buildConfigurationList = 5C5F812B2B91BCB000654123 /* Build configuration list for PBXProject "HYGames" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -227,7 +222,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				5C5F812F2B91BCB000654123 /* Retro Game */,
+				5C5F812F2B91BCB000654123 /* HYGames */,
 			);
 		};
 /* End PBXProject section */
@@ -251,7 +246,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5C5F81362B91BCB000654123 /* ContentView.swift in Sources */,
+				5C5F81362B91BCB000654123 /* ReversiMainView.swift in Sources */,
+				5CB2024F2BABF54100BD70C8 /* MainView.swift in Sources */,
 				5C61FD622BA38EED00706884 /* MonitoringNetworkState.swift in Sources */,
 				5C61FD442BA20FDD00706884 /* ReversiBattleDataClass.swift in Sources */,
 				5C61FD402BA0AC5500706884 /* OnlineReversiGame.swift in Sources */,
@@ -460,7 +456,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		5C5F812B2B91BCB000654123 /* Build configuration list for PBXProject "Retro Game" */ = {
+		5C5F812B2B91BCB000654123 /* Build configuration list for PBXProject "HYGames" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5C5F813E2B91BCB200654123 /* Debug */,
@@ -469,7 +465,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		5C5F81402B91BCB200654123 /* Build configuration list for PBXNativeTarget "Retro Game" */ = {
+		5C5F81402B91BCB200654123 /* Build configuration list for PBXNativeTarget "HYGames" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5C5F81412B91BCB200654123 /* Debug */,

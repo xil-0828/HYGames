@@ -66,24 +66,33 @@ struct ReversiMainView: View {
                                 }
                             }
                         }
+                        Button {
+                            isRoomView = true;
+                        }label: {
+                            ZStack {
+                                RoundedRectangle(cornerRadius: 5).fill(Color.Neumorphic.main).softOuterShadow()
+                                    .frame(width: 200,height: 50)
+                                    .foregroundColor(.blue)
+                                HStack {
+                                    Spacer().frame(width: 20)
+                                    Text("Online Game Start")
+                                        .font(.custom("SofiaPro", size: 15))
+                                        .foregroundColor(Color(red: 87/255, green: 95/255, blue: 107/255))
+                                    Spacer()
+                                    Text("→")
+                                        .foregroundColor(Color(red: 87/255, green: 95/255, blue: 107/255))
+                                    Spacer().frame(width: 10)
+                                }
+                                
+                            }
+                            .frame(width: 200)
+                        }
+                        
                         
                     }
-    //                Button {
-    //                    isRoomView = true;
-    //                }label: {
-    //                    ZStack {
-    //                        Rectangle()
-    //                            .frame(width: 200,height: 50)
-    //                            .foregroundColor(.blue)
-    //                        Text("オンライン対戦")
-    //                            .foregroundColor(.black)
-    //                    }
-    //                }
-    //                .sheet(isPresented: $isRoomView) {
-    //                    OnlineReversiRoom(isRoomView: $isRoomView)
-    //                    .presentationDetents([.medium])
-    //                }
-                    
+                    if(isRoomView) {
+                        OnlineReversiRoom(isRoomView: $isRoomView)
+                    }
                 }
             }
         } else if UIDevice.current.userInterfaceIdiom == .pad {
@@ -132,21 +141,21 @@ struct ReversiMainView: View {
                         }
                         
                     }
-    //                Button {
-    //                    isRoomView = true;
-    //                }label: {
-    //                    ZStack {
-    //                        Rectangle()
-    //                            .frame(width: 200,height: 50)
-    //                            .foregroundColor(.blue)
-    //                        Text("オンライン対戦")
-    //                            .foregroundColor(.black)
-    //                    }
-    //                }
-    //                .sheet(isPresented: $isRoomView) {
-    //                    OnlineReversiRoom(isRoomView: $isRoomView)
-    //                    .presentationDetents([.medium])
-    //                }
+                    Button {
+                        isRoomView = true;
+                    }label: {
+                        ZStack {
+                            Rectangle()
+                                .frame(width: 200,height: 50)
+                                .foregroundColor(.blue)
+                            Text("オンライン対戦")
+                                .foregroundColor(.black)
+                        }
+                    }
+                    .sheet(isPresented: $isRoomView) {
+                        OnlineReversiRoom(isRoomView: $isRoomView)
+                        .presentationDetents([.medium])
+                    }
                 }
             }
         }

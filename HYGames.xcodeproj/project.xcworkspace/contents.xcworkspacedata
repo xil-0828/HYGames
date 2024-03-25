@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:">
+      location = "self:/Users/hiraiyuuki/Documents/iOS_App_Dev/Retro Game/HYGames.xcodeproj">
    </FileRef>
 </Workspace>
